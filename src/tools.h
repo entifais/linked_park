@@ -13,15 +13,24 @@ class files{
 	public:
 	linklist read2ll(string name){
 		linklist ll;
-		//fstream usersFile; usersFile.open(name);
+		fstream file(name);
 		cout<<"in f";
-		fstream infile(name);
+		//fstream infile(name);
 		string line,username,password;
 		ll.username="username";
 		ll.password="password";
 		ll.next= new linklist();
-		while(infile>>username>>password){
+		ll=*ll.next;
+		string str;
+		int pos;
 
+		while(getline(file,str)){//){infile>>username>>password){
+			pos=str.find(" ");
+			ll.username=str.substr(0,pos);
+			ll.password=str.substr(pos+1,str.length());
+			ll.next= new linklist();
+			ll=*ll.next;
+	
 
 		}
 		/*if ( usersFile.is_open() ) {
@@ -60,9 +69,10 @@ public:
 	void del(){
 	}
 	void dataprint(linklist &ll){
-		while(ll.next){
+		do{
 			cout<<ll.username<<"\t"<<ll.password<<endl;
-		}
+			ll=*ll.next;
+		}while(ll.next);
 	}
 
 
