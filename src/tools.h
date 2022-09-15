@@ -3,6 +3,7 @@
 #include "hash-library/sha256.h"
 
 using namespace std;
+// change like techar say
 typedef struct linklist {
   string username;
   string password;
@@ -14,7 +15,6 @@ class files{
 	linklist read2ll(string name){
 		linklist ll;
 		fstream file(name);
-		cout<<"in f";
 		//fstream infile(name);
 		string line,username,password;
 		ll.username="username";
@@ -23,30 +23,52 @@ class files{
 		ll=*ll.next;
 		string str;
 		int pos;
-
 		while(getline(file,str)){//){infile>>username>>password){
+			//cout<<"while";
 			pos=str.find(" ");
-			ll.username=str.substr(0,pos);
-			ll.password=str.substr(pos+1,str.length());
+			username=str.substr(0,pos);
+			password=str.substr(pos+1,str.length());
+			//cout<<username<<"\t"<<password<<endl;
+			ll.username=username;
+			ll.password=password;
+			cout<<ll.username<<"\t"<<ll.password<<endl;
 			ll.next= new linklist();
 			ll=*ll.next;
-	
-
 		}
-		/*if ( usersFile.is_open() ) {
-			int pos;
-			while ( usersFile ) {
-				line = usersFile.get();
-				pos=line.find(" ");
-				username=line.substr(0,pos);
-				password=line.substr(pos,line.length());
-				cout << username;
-			}
-		}*/
+
 		return ll; 
 	}
+		void readf(string name){
+		string line,username,password,txt;
+		ifstream myfile(name);
+		//myfile.open(name);
+		if(myfile.is_open()){
+			do{
+				myfile>>line;
+				cout<<line<<endl;
+				//string txt=txt+line;
+			}while(!myfile.fail());
+		}else{
+		cout<<"error file not open";
+		}
+	}
 };
+class linkedlisttools{
+public:
+	void printll(linklist ll){
+		string username,password;
+		cout<<ll.username;
+		cout<<ll.next;
+		do{
+			username=ll.username;
+			password=ll.password;
+			cout<<username<<"\t"<<password<<endl;
+			
+		}while(ll.next!=NULL);
+	}
 
+	
+};
 class cli{//cli interface tool
 public:
 	void banner(){
@@ -68,12 +90,7 @@ public:
 	}
 	void del(){
 	}
-	void dataprint(linklist &ll){
-		do{
-			cout<<ll.username<<"\t"<<ll.password<<endl;
-			ll=*ll.next;
-		}while(ll.next);
-	}
+
 
 
 };
