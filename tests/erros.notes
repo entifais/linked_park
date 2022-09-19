@@ -1,0 +1,16 @@
+src/files.cpp:37:1: error: redefinition of ‘files::~files()’
+   37 | files::~files(){
+      | ^~~~~
+src/files.h:12:17: note: ‘files::~files()’ previously defined here
+   12 |                 ~files(){};
+
+
+src/files.cpp:4:1: error: redefinition of ‘files::files()’
+    4 | files::files(){};
+      | ^~~~~
+src/files.h:8:17: note: ‘files::files()’ previously defined here
+    8 |                 files(){};
+      |                 ^~~~~
+
+
+redefinicion de un destructor y constructor

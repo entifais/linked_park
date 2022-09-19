@@ -1,5 +1,5 @@
 #include "files.h"
-#include "linkedlist"
+#include "linkedlist.h"
 #include <fstream>
 files::files(){};
 files::files(string name){
@@ -26,9 +26,9 @@ files::files(string name){
 	cout<<"error file not open";
 	}
 };
-files::getData(){};
+linkedlist files::getData(){};
 	return this->ll;
-files::loadData(linkedlist data){
+void files::loadData(linkedlist data){
 	for(int i=0;i<data.lenght();i++){
 		this->myfile<<data[i].frist<<"\n";
 		this->myfile<<data[i].second<<"\n";

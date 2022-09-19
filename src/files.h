@@ -1,7 +1,7 @@
 #ifndef files_h
 #define files_h
 #include <string>
-#include "linkedlist"
+#include "linkedlist.h"
 
 class files{
 	public:
@@ -9,7 +9,8 @@ class files{
 		files(string name){};
 		linkedlist getData(){};
 		void loadData(linkedlist data){};
-		~files(){}
+		~files(){};
+		
 	private:
 
 };

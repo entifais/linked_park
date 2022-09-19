@@ -1,7 +1,7 @@
 #ifndef linkedlist_h
 #define linkedlist_h
 #include <string>
-
+using namespace std;
 class linkedlist{
 	public:
 		linkedlist(){};

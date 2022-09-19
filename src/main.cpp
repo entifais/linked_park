@@ -1,19 +1,20 @@
 #include <iostream>
-#include "cli"
-#include "files"
-#include "hash-library/sha256"
+#include "cli.h"
+#include "files.h"
+#include "hash-library/sha256.h"
 //#define linkedlist
-FILENAME="data.txt"
+string FILENAME="data.txt";
 
 using namespace std;
 int main(){
 	cli interface;
 	SHA256 sha256;
-	files f= new files(FILENAME);
+	//files f= new files(FILENAME);
+	files f;
 	linkedlist ll=f.getData();
 	int input;
 	do{
-		interface.clear()
+		interface.clear();
 		interface.banner();
 		interface.options();
 		cin>>input;
@@ -23,27 +24,27 @@ int main(){
 			cout<<"enter your password\n"<<endl;
 			string password;cin>>password;
 			password=sha256(password);
-			ll.add(username,password)
-			cout<<"data was added"<<endl
+			ll.add(username,password);
+			cout<<"data was added"<<endl;
 			//ingresar
 		}
 		if(input==2){
 			cout<<"enter postion to delete\n"<<endl;
 			int pos;cin>>pos;
-			ll.del(pos)
-			cout<<"data was delete"<<endl
+			ll.del(pos);
+			cout<<"data was delete"<<endl;
 		}
 		if(input==3){
-			ll.printWithStyle()
+			ll.printWithStyle();
 		}
 		if(input==4){
 			cout<<"enter postion to search\n"<<endl;
 			int pos;cin>>pos;
-			cout<<search(pos)<<endl;
+			cout<<ll.search(pos)<<endl;
 		}
 		if(input==5){
-			f.loadData(linkedlist data)
-			cout<<"data was save"<<endl
+			f.loadData(ll);
+			cout<<"data was save"<<endl;
 		}
 	}while(input!=0);
 
