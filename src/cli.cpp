@@ -16,7 +16,8 @@ cli::options(){
 		cout<<"2) delete user"<<endl;
 		cout<<"3) visualise"<<endl;
 		cout<<"4) search"<<endl;
-		cout<<"q) end"<<endl;
+		cout<<"5) save"<<endl;
+		cout<<"0) end"<<endl;
 }
 cli::clear(){
 	#if defined(__linux__) 
