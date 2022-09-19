@@ -7,7 +7,7 @@ class files{
 	public:
 		files(){};
 		files(string name){};
-		getData(){};
+		linkedlist getData(){};
 		void loadData(linkedlist data){};
 		~files(){}
 	private:

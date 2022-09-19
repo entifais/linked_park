@@ -3,26 +3,18 @@
 #include <fstream>
 files::files(){};
 files::files(string name){
-	#ifdef linkedlist
-	linkedlist ll= new linkedlist();
-	this->ll=ll;
-	#else
-	#endif
+	linkedlist ll =new linkedlist();
 	int i=0;
 	string line,username,password;
 	ifstream myfile(name);
-	//myfile.open(name);
-	if(myfile.is_open()){
+	this->myfile;
+	if(this->myfile.is_open()){
 		do{
-			myfile>>line;
+			this->myfile>>line;
 			cout<<line<<endl;
 			if (i%2==0){
 				if(i!=0){
-					#ifdef linkedlist
-					this->ll.add(,string name,string password);
-					node *newnode=new node(username,password);
-					#else
-					#endif
+					this->ll.add(name,password);
 				}
 				username=line;
 			}else{
@@ -36,7 +28,12 @@ files::files(string name){
 };
 files::getData(){};
 	return this->ll;
-files::loadData(linkedlist data){};
+files::loadData(linkedlist data){
+	for(int i=0;i<data.lenght();i++){
+		this->myfile<<data[i].frist<<"\n";
+		this->myfile<<data[i].second<<"\n";
+	}
+};
 files::~files(){
-	myfile.close();
+	this->myfile.close();
 }

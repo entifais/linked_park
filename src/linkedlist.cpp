@@ -1,79 +1,47 @@
 #include "linkedlist.h"
 #include <iostream>
 #include <string>
-
-node::node(){}
-node::node(string d1,string d2){
-	this->dato1=d1;
-	this->dato2=d2;
-	this->sgte=NULL;
-}
-node::~node(){
-	this->dato1="";
-	this->dato2="";
-	this->sgte=NULL;
-}
+#include <algorithm>
 linkedlist::linkedlist(){
-	this->head=NULL;
+	std::vector<pair> linklist();
+	this->linklist;
 }
 linkedlist::~linkedlist(){
-	this->head=NULL;
+	for (int i=0;i<this->linklist.size();++i){
+		this->linklist.pop_back();
+	}
 }
 //mmm for one and more
-linkedlist::add(linkedlist &head,string name,string password){
-	node *newnode=new node(name,password);
-	if(this->head==NULL){
-		this->head=newnode;
-	}else{
-		head->sgte=newnode;
-		/*node *tmp=this->head;
-		while(tmp->sgte!=NULL){//tmp->sgte?
-			tmp=tmp->sgte;
-		}
-		tmp->sgte=newnode;*/
-	}
+linkedlist::add(string username,string password){
+	pair<string,string> node;
+	node.frist=username;
+	node.second=password;
+	this->linklist.push_back(node);
 }
 linkedlist::del(int pos){
-	node *tmp1=this->head;
-	int i=0;
-	if(this->head==NULL){
-		cout<<"[ERROR] can't remove node from an empty linked list\nadds items to the list"<<endl;
-		return;
-	}
-	if(pos>i;){
-		cout<<"[ERROR] IndexError: list index out of range\nadds items to the list"<<endl;
-		return;
-		//error
-	}
-
-	while (tmp1!=NULL && i<pos-1) {
-        temp1 = tmp1->sgte;
-        i++;
-    }
-    node *next = tmp->sgte->sgte;
-    free(tmp->sgte)
-    tmp->sgte=next;
-	return this->name
+	string username=this->linklist[pos].frist;
+	this->linklist.erase(this->linklist.begin() + pos);
+	return username
 }
 
 linkedlist::print(){
-	string username;
-	string password;
-	node *tmp1=this->head;
-	while (tmp1!=NULL) {
-
-        cout<<"username:"<<tmp1->dato1<<endl;
-        cout<<"password:"<<tmp1->dato2<<endl;
-
-        tmp1 = tmp1->sgte;
-    }
+	for (int i = 0; i < ; ++i){
+		cout<<"username:"<<this->linklist[i].frist<<endl;
+		cout<<"password:"<<this->linklist[i].second<<endl;
+	}
+}
+linkedlist::search(int pos){
+	string query="username:\t"this->linklist[pos].frist+"\tpassword:\t"+this->linklist[pos].second;
+	return query;
 }
 linkedlist::printWithStyle(){
-	node *tmp1=this->head;
-	while (tmp1!=NULL) {
-		nodestryle(tmp1->dato1,tmp1->dato2);
-        tmp1 = tmp1->sgte;
-    }
+	nodestryle(this->linklist[0].frist,this->linklist[0].second);
+	for (int i = 1; i < ; ++i){
+		cout<<"\t\t|"<<endl
+		cout<<"\t\t|"<<endl
+		cout<<"\t\tV"<<endl
+		nodestryle(this->linklist[i].frist,this->linklist[i].second);
+	}
 }
 linkedlist::nodestryle(string u,string p){
 
