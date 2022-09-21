@@ -4,8 +4,8 @@
 
 class cli{
 	public:
-		void banner(){}
-		void options(){}
-		void clear(){}
+		void banner();
+		void options();
+		void clear();
 };
 #endif

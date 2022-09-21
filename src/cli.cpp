@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 #include <stdlib.h> 
 #include "cli.h"
 using namespace std;
