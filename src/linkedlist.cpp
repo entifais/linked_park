@@ -6,8 +6,8 @@
 using namespace std;
 //only std for string
 linkedlist::linkedlist(){
-	vector<pair<string,string>> linklist;
-	this->linklist;
+	//vector<pair<string,string>> linklist;
+	//this->linklist=linklist;
 }
 linkedlist::~linkedlist(){
 	for (int i=0;i<this->linklist.size();++i){
@@ -56,6 +56,6 @@ void linkedlist::nodestryle(string u,string p){
 	cout<<"-------------------"<<endl;
 }
 vector<pair<string,string>> getlinklist(){
-	return this->linklist;
+	return &this->linklist;
 }
 

@@ -1,0 +1,231 @@
+g++ src/linkedlist.cpp src/linkedlist.h src/cli.h src/cli.cpp src/files.cpp src/files.h src/main.cpp   -O2 -o main
+src/linkedlist.cpp: In function ‘std::vector<std::pair<std::__cxx11::basic_string<char>, std::__cxx11::basic_string<char> > > getlinklist()’:
+src/linkedlist.cpp:59:17: error: invalid use of ‘this’ in non-member function
+   59 |         return &this->linklist;
+      |                 ^~~~
+src/files.cpp: In constructor ‘files::files(std::string)’:
+src/files.cpp:12:22: error: use of deleted function ‘std::basic_ifstream<_CharT, _Traits>& std::basic_ifstream<_CharT, _Traits>::operator=(const std::basic_ifstream<_CharT, _Traits>&) [with _CharT = char; _Traits = std::char_traits<char>]’
+   12 |         this->myfile=myfile;
+      |                      ^~~~~~
+In file included from src/files.h:5,
+                 from src/files.cpp:1:
+/usr/include/c++/12.1.1/fstream:611:7: note: declared here
+  611 |       operator=(const basic_ifstream&) = delete;
+      |       ^~~~~~~~
+src/files.cpp: In member function ‘void files::loadData(linkedlist)’:
+src/files.cpp:38:29: error: no match for ‘operator<<’ (operand types are ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} and ‘std::__cxx11::basic_string<char>’)
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                 ~~~~~~~~~~~~^~
+      |                       |
+      |                       std::ifstream {aka std::basic_ifstream<char>}
+In file included from /usr/include/c++/12.1.1/bits/basic_string.h:47,
+                 from /usr/include/c++/12.1.1/string:53,
+                 from src/files.h:3:
+/usr/include/c++/12.1.1/string_view:672:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/string_view:672:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/bits/basic_string.h:3882:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 3882 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/bits/basic_string.h:3882:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+In file included from /usr/include/c++/12.1.1/bits/ios_base.h:46,
+                 from /usr/include/c++/12.1.1/ios:42,
+                 from /usr/include/c++/12.1.1/istream:38,
+                 from /usr/include/c++/12.1.1/fstream:38:
+/usr/include/c++/12.1.1/system_error:279:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/system_error:279:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+In file included from /usr/include/c++/12.1.1/istream:39:
+/usr/include/c++/12.1.1/ostream:507:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:507:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:517:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:517:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:523:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:523:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:534:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:534:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:539:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:539:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:598:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:598:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+In file included from /usr/include/c++/12.1.1/ostream:833:
+/usr/include/c++/12.1.1/bits/ostream.tcc:302:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:615:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:615:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:628:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:628:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:633:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:633:5: note:   template argument deduction/substitution failed:
+src/files.cpp:38:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   38 |                 this->myfile<<datav[i].first<<"\n";
+      |                                        ^~~~~
+/usr/include/c++/12.1.1/ostream:754:5: note: candidate: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:754:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/12.1.1/ostream: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ifstream<char>&; _Tp = std::__cxx11::basic_string<char>]’:
+src/files.cpp:38:26:   required from here
+/usr/include/c++/12.1.1/ostream:754:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+src/files.cpp:39:29: error: no match for ‘operator<<’ (operand types are ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} and ‘std::__cxx11::basic_string<char>’)
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                 ~~~~~~~~~~~~^~
+      |                       |
+      |                       std::ifstream {aka std::basic_ifstream<char>}
+/usr/include/c++/12.1.1/string_view:672:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/string_view:672:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/bits/basic_string.h:3882:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 3882 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/bits/basic_string.h:3882:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/system_error:279:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/system_error:279:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:507:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:507:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:517:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:517:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:523:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:523:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:534:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:534:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:539:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:539:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:598:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:598:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/bits/ostream.tcc:302:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<_CharT, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:615:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:615:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:628:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:628:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:633:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:633:5: note:   template argument deduction/substitution failed:
+src/files.cpp:39:40: note:   ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} is not derived from ‘std::basic_ostream<char, _Traits>’
+   39 |                 this->myfile<<datav[i].second<<"\n";
+      |                                        ^~~~~~
+/usr/include/c++/12.1.1/ostream:754:5: note: candidate: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/include/c++/12.1.1/ostream:754:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/12.1.1/ostream: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ifstream<char>&; _Tp = std::__cxx11::basic_string<char>]’:
+src/files.cpp:39:26:   required from here
+/usr/include/c++/12.1.1/ostream:754:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+make: *** [Makefile:2: compile] Error 1

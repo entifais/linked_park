@@ -9,8 +9,8 @@ files::files(string name){
 	int i=0;
 	string line,username,password;
 	ifstream myfile(name);
-	this->myfile;
-	this->ll;
+	this->myfile=myfile;
+	this->ll=ll;
 	if(this->myfile.is_open()){
 		do{
 			this->myfile>>line;
