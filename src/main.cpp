@@ -2,15 +2,17 @@
 #include "cli.h"
 #include "files.h"
 #include "hash-library/sha256.h"
+#include "linkedlist.h"
 //#define linkedlist
-string FILENAME="data.txt";
 
 using namespace std;
+string FILENAME="data.txt";
+
 int main(){
 	cli interface;
 	SHA256 sha256;
-	//files f= new files(FILENAME);
-	files f;
+	files f=new files(FILENAME);
+	//files f;
 	linkedlist ll=f.getData();
 	int input;
 	do{

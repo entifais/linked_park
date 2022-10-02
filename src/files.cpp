@@ -5,15 +5,16 @@
 using namespace std;
 files::files(){};
 files::files(string name){
+	this->name=name;
 	linkedlist ll;
 	int i=0;
 	string line,username,password;
-	ifstream myfile(name);
-	this->myfile=myfile;
+	ifstream myfile;
+	myfile.open(name);
 	this->ll=ll;
-	if(this->myfile.is_open()){
+	if(!myfile.is_open()){
 		do{
-			this->myfile>>line;
+			myfile>>line;
 			cout<<line<<endl;
 			if (i%2==0){
 				if(i!=0){
@@ -28,17 +29,26 @@ files::files(string name){
 	}else{
 	cout<<"error file not open";
 	}
+	myfile.close();
 };
 linkedlist files::getData(){
 	return this->ll;
 }
 void files::loadData(linkedlist data){
-	auto datav=data.getlinklist();
+	ofstream file2;
+	file2.open(this->name);
 	for(int i=0;i<datav.size();i++){
-		this->myfile<<datav[i].first<<"\n";
-		this->myfile<<datav[i].second<<"\n";
+		file2<<datav.dato1; 
+		file2<<datav.dato2; 
 	}
+	file2.close();
 };
 files::~files(){
-	this->myfile.close();
+	ofstream file2;
+	file2.open(this->name);
+	for(int i=0;i<ll.size();i++){
+		file2 <<this->ll.dato1; 
+		file2 <<this->ll.dato2; 
+	}
+	file2.close();
 }

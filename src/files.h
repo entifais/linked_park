@@ -6,15 +6,14 @@
 
 class files{
 	public:
-		ifstream myfile;
 		linkedlist ll;
 		files();
 		files(string name);
 		linkedlist getData();
 		void loadData(linkedlist data);
 		~files();
-		
 	private:
+		string name;
 
 };
 #endif
